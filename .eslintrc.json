@@ -5,10 +5,14 @@
     "parser": "@typescript-eslint/parser",
     "plugins": [
         "prettier",
-        "prefer-arrow"
+        "prefer-arrow",
+        "import"
     ],
     "extends": [
         "next/core-web-vitals",
+        "airbnb",
+        "airbnb-typescript",
+        "airbnb/hooks",
         "prettier"
     ],
     // "rules" always have precedence over "extends"
@@ -19,20 +23,23 @@
         "arrow-body-style" :"error",
         "react/function-component-definition": 0,
         "prefer-arrow/prefer-arrow-functions": [
-            "warn",
-            {
-              "disallowPrototype": true,
-              "singleReturnOnly": false,
-              "classPropertiesAllowed": false
-            }
-          ],
-          "prettier/prettier": [
-            "error",
-            {
-              "trailingComma": "es5",
-              "singleQuote": true,
-              "printWidth": 80
-            }
-          ]
+          "warn",
+          {
+            "disallowPrototype": true,
+            "singleReturnOnly": false,
+            "classPropertiesAllowed": false
+          }
+        ],
+        "prettier/prettier": [
+          "error",
+          {
+            "trailingComma": "es5",
+            "singleQuote": true,
+            "printWidth": 80
+          }
+        ],
+        "react/react-in-jsx-scope": 0,
+        "import/order": ["error", {"groups": ["external", "builtin", "type", "internal", "index", "sibling", "parent", "object" ]}],
+        "react/jsx-props-no-spreading": 0
     }
 }
