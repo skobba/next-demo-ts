@@ -1,3 +1,25 @@
 {
-  "extends": "next/core-web-vitals"
+    "parserOptions": {
+        "project": ["./tsconfig.json"]
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "prefer-arrow"
+    ],
+    "extends": ["next/core-web-vitals"],
+    "rules": {
+        "react/no-unused-prop-types": 0,
+        "@typescript-eslint/no-unused-vars": 0,
+        "react/jsx-one-expression-per-line": 0,
+        "arrow-body-style" :"error",
+        "react/function-component-definition": 0,
+        "prefer-arrow/prefer-arrow-functions": [
+            "warn",
+            {
+              "disallowPrototype": true,
+              "singleReturnOnly": false,
+              "classPropertiesAllowed": false
+            }
+          ]
+    }
 }
