@@ -4,9 +4,14 @@
     },
     "parser": "@typescript-eslint/parser",
     "plugins": [
+        "prettier",
         "prefer-arrow"
     ],
-    "extends": ["next/core-web-vitals"],
+    "extends": [
+        "next/core-web-vitals",
+        "prettier"
+    ],
+    // "rules" always have precedence over "extends"
     "rules": {
         "react/no-unused-prop-types": 0,
         "@typescript-eslint/no-unused-vars": 0,
@@ -19,6 +24,14 @@
               "disallowPrototype": true,
               "singleReturnOnly": false,
               "classPropertiesAllowed": false
+            }
+          ],
+          "prettier/prettier": [
+            "error",
+            {
+              "trailingComma": "es5",
+              "singleQuote": true,
+              "printWidth": 80
             }
           ]
     }
