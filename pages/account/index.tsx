@@ -1,9 +1,10 @@
-import Layout from '../components/layout';
-import Sidebar from '../components/sidebar';
+import { ReactElement } from 'react';
+import Layout from '../../components/layout';
+import Sidebar from '../../components/sidebar';
 
-const Index = () => (
+export const Account = () => (
   <section>
-    <h2>Index</h2>
+    <h2>Account</h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium
       lacus et eros lobortis condimentum. Sed ut nisl id massa mattis sodales
@@ -17,4 +18,13 @@ const Index = () => (
   </section>
 );
 
-export default Index;
+const getLayout = (page: ReactElement) => (
+  <Layout>
+    <Sidebar />
+    {page}
+  </Layout>
+);
+
+Account.getLayout = getLayout;
+
+export default Account;
